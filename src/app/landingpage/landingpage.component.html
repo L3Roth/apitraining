@@ -1,0 +1,33 @@
+<div>
+    <app-header #header></app-header>
+    <div fxLayoutGap = "16px grid">
+        <div fxLayout="column" fxLayoutGap="8px">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="32px" fxFlex>
+                <article fxFlex="3 1 45%" fxFlexOrder fxFlexOrder.xs="1">
+                    <div fxLayout="column" fxLayoutGap="32px">
+                        <!--<app-matchcard-list
+                        (matchcardWasSelected)="selectedMatchCard = $event"></app-matchcard-list>
+                        <app-matchcardsnew *ngFor="let datas of data"></app-matchcardsnew>-->
+                        <div *ngFor="let match of matches">
+                            <app-matchcardsnew [datas]="match"></app-matchcardsnew>
+                        </div>
+                        
+                    </div>
+                </article>
+                <article fxFlex="3 2 45%" fxFlexOrder fxLayoutGap="32px" fxFlexOrder.xs="2">
+                    <div fxLayout="column" fxLayoutGap="32px">
+                        <app-matchcard-detail
+                        *ngIf="selectedMatchcard" [matchcard]="selectedMatchCard"></app-matchcard-detail>
+                        <!--<app-matchcard *ngIf="selectedMatch"></app-matchcard>
+                        <app-matchcard></app-matchcard>
+                        <app-matchcard></app-matchcard>-->
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+

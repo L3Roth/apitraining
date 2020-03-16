@@ -1,0 +1,41 @@
+<mat-toolbar  fxLayout="row" fxLayout.xs="column">
+    <mat-toolbar-row fxLayoutGap="32px">
+        <span class="gap">
+            <mat-form-field appearance="legacy">
+                <!--<mat-label>Choose a competition</mat-label>-->
+                <mat-select [(ngModel)]="compValueId" (ngModelChange)="selectEvent()">
+                    <mat-option *ngFor="let competition of compTierOne" [value]="competition.id">{{competition.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="32px">
+        <span class="gap">
+            <mat-form-field appearance="legacy">
+                <!--<mat-label>Choose a date</mat-label>-->
+                <input matInput [matDatepicker]="picker" (dateInput)="OnDateChange($event.value)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker format="yyyy-MM-dd"></mat-datepicker>
+            </mat-form-field>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="32px">
+        <button mat-raised-button (click)="executeSearch()">Search</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
